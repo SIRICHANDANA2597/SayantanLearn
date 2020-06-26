@@ -32,7 +32,7 @@ client.connect()
 
 var Products = {
   find: function(req, res, next) {
-      client.query('Select a.Hotel,b.Places,b.Description,b.VisitingPlaces,a.PPN from Hotel a join Travel_Places b ON a.Place = b.slno', 
+      client.query('Select a.slno,a.Hotel,b.Places,b.Description,b.VisitingPlaces,a.PPN,a.room_available from Hotel a join Travel_Places b ON a.Place = b.slno', 
       function(err,results){
        if (err) throw err;
        var rows = JSON.stringify(results.rows);
