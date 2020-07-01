@@ -3,6 +3,7 @@
 var properties = require('../package.json');
 var products = require('../service/Product');
 var hotels = require('../service/Hotels');
+var visiting = require('../service/Visiting');
 console.log(4);
 var controllers = {
    getProducts: function(req, res) {
@@ -21,6 +22,13 @@ var controllers = {
                     res.json(hotellist);
                 });
             },
+   getvisiting: function(req, res) {
+    visiting.find(req, res, function(err, visitinglist) {
+               if (err)
+                   res.send(err);
+               res.json(visitinglist);
+           });
+       },
 };
 
 module.exports = controllers;
