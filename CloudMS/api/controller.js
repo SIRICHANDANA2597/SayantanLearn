@@ -3,7 +3,7 @@
 var properties = require('../package.json');
 var products = require('../service/Product');
 var hotels = require('../service/Hotels');
-var visiting = require('../service/Visiting');
+var visiting = require('../service/visiting');
 console.log(4);
 var controllers = {
    getProducts: function(req, res) {
