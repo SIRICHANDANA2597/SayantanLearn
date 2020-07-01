@@ -7,4 +7,6 @@ module.exports = function(app) {
        .get(controller.getProducts);
    app.route('/hotels/:slno?')
        .get(controller.gethotels);
+   app.route('/visiting')
+       .get(controller.getvisiting);
 };
