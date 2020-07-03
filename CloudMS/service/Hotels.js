@@ -66,9 +66,9 @@ var Hotels = {
     find: function(req, res, new_var, next) {
      // console.log(new_var);
       if (new_var != null)
-        var sqlstmnt= 'Select a.slno,a.Hotel,b.Places,b.Description,b.VisitingPlaces,a.PPN,a.room_available from Hotel a join Travel_Places b ON a.Place = b.slno where a.place IN(select place from hotel where slno =' + new_var + ') AND a.slno <> ' + new_var + ' order by a.slno';   
+        var sqlstmnt= 'Select a.slno,a.Hotel,b.Places,b.Description,b.VisitingPlaces,a.PPN,a.room_available,a.rating from Hotel a join Travel_Places b ON a.Place = b.slno where a.place IN(select place from hotel where slno =' + new_var + ') AND a.slno <> ' + new_var + ' order by a.slno';   
       else   
-     var sqlstmnt= 'Select a.slno,a.Hotel,b.Places,b.Description,b.VisitingPlaces,a.PPN,a.room_available from Hotel a join Travel_Places b ON a.Place = b.slno'; 
+     var sqlstmnt= 'Select a.slno,a.Hotel,b.Places,b.Description,b.VisitingPlaces,a.PPN,a.room_available,a.rating from Hotel a join Travel_Places b ON a.Place = b.slno'; 
       client.query(sqlstmnt, function(err,results){
          if (err) throw err;
          var rows = JSON.stringify(results.rows);
